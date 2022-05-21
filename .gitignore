@@ -1,0 +1,6 @@
+.env
+node_modules/
+java/
+rust/
+python/
+js/
