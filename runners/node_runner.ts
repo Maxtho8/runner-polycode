@@ -3,8 +3,9 @@ import fs from "fs";
 import { EventEmitter, Stream, PassThrough } from "stream";
 import path from "path";
 
+const __dirname = path.resolve();
+const pwd = path.resolve(".");
 
-const pwd  = "/home/maxtho/polycode/backend"
 const docker = new Docker();
 
 
@@ -12,8 +13,7 @@ export default function runJSCode(code: string) {
   return new Promise((resolve, reject) => {
     // create file based on timestamp
     let time = new Date().getTime();
-    console.log(pwd);
-    fs.writeFile(pwd+"/js/" + time + ".js", code , err => {
+    fs.writeFile(pwd + "/js/" + time + ".js", code, err => {
       docker
         .createContainer({
           Image: "node",
