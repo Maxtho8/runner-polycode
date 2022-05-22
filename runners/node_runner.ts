@@ -13,7 +13,7 @@ export default function runJSCode(code: string) {
     // create file based on timestamp
     let time = new Date().getTime();
     console.log(pwd);
-    fs.writeFile(pwd+"/js/" + time + ".js", "console.log('ok')", err => {
+    fs.writeFile(pwd+"/js/" + time + ".js", code , err => {
       docker
         .createContainer({
           Image: "node",
