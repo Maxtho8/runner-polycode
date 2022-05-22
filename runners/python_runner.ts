@@ -13,7 +13,7 @@ export default function runPythonCode(code: string) {
     // create file based on timestamp
     let time = new Date().getTime();
     console.log(pwd);
-    fs.writeFile(pwd+"/python/" + time + ".py", "print('ok')", err => {
+    fs.writeFile(pwd+"/python/" + time + ".py", code, err => {
       docker
         .createContainer({
           Image: "python",
