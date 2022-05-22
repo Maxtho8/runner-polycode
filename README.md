@@ -4,6 +4,12 @@ Le runner créer un fichier dans lequel il écrit le code reçu puis grâce à u
 
 ## Installation 
 
+Récupérer les images docker suivantes :
+- python
+- node
+- rust
+- openjdk
+
 Créer 4 fichiers à la racine du projet :
 - python 
 - js 
