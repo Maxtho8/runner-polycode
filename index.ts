@@ -1,15 +1,15 @@
-
 import express from 'express'
 import runPythonCode from "./runners/python_runner.js";
 import runJSCode from "./runners/node_runner.js";
 import runJavaCode from './runners/java_runner.js';
 import runRustCode from './runners/rust_runner.js';
+import cors from "cors"
 
 /**
  * On créé une nouvelle "application" express
  */
 const app = express()
-
+app.use(cors())
 /**
  * On dit à Express que l'on souhaite parser le body des requêtes en JSON
  *
@@ -23,7 +23,7 @@ app.post("/python", (req, res) => {
   })
 
 })
-app.post("/js", (req, res) => {
+app.post("/javascript", (req, res) => {
   runJSCode('').then(result => {
     res.send(result)
   })
