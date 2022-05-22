@@ -13,7 +13,7 @@ export default function runJavaCode(code: string) {
     // create file based on timestamp
     let time = new Date().getTime();
     console.log(pwd);
-    fs.writeFile(pwd+"/java/" + time + ".java", `public class Main {public static void main(String[] args){System.out.println("Hello World");}}`, err => {
+    fs.writeFile(pwd+"/java/" + time + ".java", code, err => {
       docker
         .createContainer({
           Image: "openjdk",
